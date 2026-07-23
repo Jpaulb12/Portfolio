@@ -45,6 +45,25 @@
   --border-thin: 1px solid var(--accent-border);
 }
 
+/* Light Theme Tokens */
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-alt: #f1f5f9;
+  --bg-glass: rgba(248, 250, 252, 0.9);
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  --accent: #059669;
+  --accent-hover: #047857;
+  --accent-glow: rgba(5, 150, 105, 0.2);
+
+  --accent-border: #cbd5e1;
+  --accent-border-hover: #94a3b8;
+}
+
 /* 2. Document Resets */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -240,6 +259,46 @@ img {
 
 .logo-accent {
   color: var(--accent);
+}
+
+.nav-right-group {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.theme-toggle-btn {
+  background: var(--bg-secondary);
+  border: var(--border-thin);
+  border-radius: 50px;
+  padding: 0.35rem 0.65rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  transition: var(--transition-fast);
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--accent);
+  background-color: var(--accent-glow);
+  transform: scale(1.05);
+}
+
+[data-theme="light"] .theme-icon-moon {
+  display: inline;
+}
+[data-theme="light"] .theme-icon-sun {
+  display: none;
+}
+
+:root:not([data-theme="light"]) .theme-icon-moon {
+  display: none;
+}
+:root:not([data-theme="light"]) .theme-icon-sun {
+  display: inline;
 }
 
 .nav-links {

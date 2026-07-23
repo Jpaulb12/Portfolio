@@ -3,6 +3,27 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // --- Theme Switcher (Dark / Light Mode) ---
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const savedTheme = localStorage.getItem('theme');
+
+  if (savedTheme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      if (isLight) {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  }
+
   // --- Navigation & Scroll Highlighting (Intersection Observer) ---
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('.nav-link');

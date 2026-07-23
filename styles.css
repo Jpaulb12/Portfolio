@@ -600,7 +600,7 @@ img {
 /* 9. Projects Grid (Auto-fill responsive structure) */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: var(--spacing-md);
 }
 
@@ -981,6 +981,12 @@ body.modal-open {
    13. Responsive Media Queries
    ========================================================================== */
 
+/* Word Break & Overflow Protection */
+.detail-value, .detail-label, p, a, h1, h2, h3, h4, span {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 /* Tablet Layout (max-width: 992px) */
 @media (max-width: 992px) {
   .about-grid {
@@ -989,21 +995,17 @@ body.modal-open {
   }
   
   .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
   
   .contact-details-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-md);
     padding-top: var(--spacing-md);
   }
   
   .contact-detail-card {
-    border-bottom: 1px dashed var(--accent-border);
-    padding-bottom: var(--spacing-sm);
-  }
-  .contact-detail-card:last-child {
-    border-bottom: none;
+    padding-bottom: var(--spacing-xs);
   }
   
   .hero-container {
@@ -1033,21 +1035,54 @@ body.modal-open {
 @media (max-width: 768px) {
   :root {
     --spacing-lg: 2.5rem;
-    --spacing-xl: 5rem;
+    --spacing-xl: 4rem;
   }
   
   html {
     font-size: 15px;
   }
   
+  .header-container {
+    padding: 0.6rem 1rem;
+  }
+  
+  .nav-links {
+    gap: 0.85rem;
+  }
+  
+  .nav-link {
+    font-size: 0.875rem;
+  }
+  
+  .theme-toggle-btn {
+    padding: 0.3rem 0.55rem;
+    font-size: 1rem;
+  }
+
   .hero-title {
-    font-size: 2.25rem;
+    font-size: 2.1rem;
+  }
+  
+  .hero-description {
+    font-size: 1.05rem;
   }
   
   .skills-grid {
     grid-template-columns: 1fr;
   }
   
+  .contact-details-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-detail-card {
+    border-bottom: 1px dashed var(--accent-border);
+    padding-bottom: var(--spacing-sm);
+  }
+  .contact-detail-card:last-child {
+    border-bottom: none;
+  }
+
   .footer-container {
     flex-direction: column;
     gap: var(--spacing-sm);
@@ -1055,8 +1090,8 @@ body.modal-open {
   }
   
   .modal-wrapper {
-    height: 95vh;
-    width: 95%;
+    height: 94vh;
+    width: 94%;
   }
   
   .modal-body-content {
@@ -1064,7 +1099,7 @@ body.modal-open {
   }
   
   .modal-title {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
   }
   
   .modal-footer-actions {
@@ -1073,5 +1108,84 @@ body.modal-open {
   
   .modal-footer-actions .btn {
     width: 100%;
+  }
+}
+
+/* Small Mobile Phones (max-width: 520px) */
+@media (max-width: 520px) {
+  .header-container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0.5rem 0.75rem;
+    gap: 0.5rem;
+  }
+  
+  .nav-right-group {
+    gap: 0.5rem;
+  }
+  
+  .nav-links {
+    gap: 0.65rem;
+  }
+  
+  .nav-link {
+    font-size: 0.825rem;
+  }
+  
+  .site-logo {
+    font-size: 1.1rem;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-card-body {
+    padding: 1rem;
+  }
+  
+  .project-card-title {
+    font-size: 1.25rem;
+  }
+  
+  .contact-box {
+    padding: var(--spacing-md) 0.85rem;
+  }
+  
+  .contact-lead-desc {
+    font-size: 1rem;
+  }
+  
+  .modal-wrapper {
+    width: 96%;
+    height: 92vh;
+    border-radius: var(--radius-md);
+  }
+  
+  .modal-body-content {
+    padding: 1rem;
+  }
+  
+  .modal-title {
+    font-size: 1.35rem;
+  }
+  
+  .detail-value {
+    font-size: 0.95rem;
   }
 }

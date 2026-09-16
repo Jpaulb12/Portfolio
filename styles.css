@@ -539,6 +539,184 @@ img {
   line-height: 1.6;
 }
 
+/* Languages Badges */
+.languages-badge-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: var(--spacing-sm);
+  padding-top: var(--spacing-xs);
+}
+
+.lang-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  background-color: var(--bg-secondary);
+  border: var(--border-thin);
+  color: var(--accent);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+}
+
+/* Education Cards */
+.education-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.edu-card {
+  background-color: var(--bg-secondary);
+  border: var(--border-thin);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  position: relative;
+}
+
+.edu-date {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  background-color: rgba(16, 185, 129, 0.1);
+  padding: 0.15rem 0.5rem;
+  border-radius: 100px;
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
+
+.edu-title {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.edu-school {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Experience Cards */
+.experience-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.experience-card {
+  background-color: var(--bg-secondary);
+  border: var(--border-thin);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.experience-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+  border-bottom: 1px dashed var(--accent-border);
+  padding-bottom: var(--spacing-xs);
+}
+
+.exp-role {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+.exp-company {
+  font-size: 0.95rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.exp-date {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background-color: var(--bg-primary);
+  border: var(--border-thin);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+.exp-bullet-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.exp-bullet-list li {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 1.25rem;
+  line-height: 1.5;
+}
+
+.exp-bullet-list li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* Certifications Grid */
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-sm);
+}
+
+.cert-card {
+  background-color: var(--bg-secondary);
+  border: var(--border-thin);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  transition: border-color var(--transition-fast);
+}
+
+.cert-card:hover {
+  border-color: var(--accent);
+}
+
+.cert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-xs);
+  margin-bottom: 0.25rem;
+}
+
+.cert-title {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.cert-date {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  background: rgba(16, 185, 129, 0.08);
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.cert-issuer {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
 /* 8. Skills Section Grid */
 .skills-grid {
   display: grid;
